@@ -1,14 +1,32 @@
-pub contract UserInfo 
+pub contract UserInfoAccount
 {
-    pub resource UserInfoAsset
+    pub var totalUsers: Int;
+
+    init()
+    {
+        self.totalUsers = 0;
+        self.account.save<@Admin>(<-create Admin(), to: /storage/Admin);
+    }
+
+    pub resource Admin 
+    {
+        pub fun createNewUser(): @UserAsset
+        {
+            return <- create UserAsset();
+        }
+    }
+
+    pub resource UserAsset 
     {
         pub var username: String;
-        pub var highScore: Int;
+        pub var highscore: Int;
 
         init()
         {
-            self.username = "DunFlw";
-            self.highScore = 0;
+            self.username =  "User".concat(UserInfoAccount.totalUsers.toString());
+            self.highscore = 0;
+
+            UserInfoAccount.totalUsers = UserInfoAccount.totalUsers + 1;
         }
 
         pub fun getUserName(): String
@@ -18,22 +36,22 @@ pub contract UserInfo
 
         pub fun getHighScore(): Int
         {
-            return self.highScore;
+            return self.highscore;
         }
 
-        pub fun updateHighScore(highScore: Int)
+        pub fun getUserNameAndHighScore(): {String: Int}
         {
-            self.highScore = highScore;
+            return {self.username: self.highscore}
         }
 
         pub fun updateUserName(username: String)
         {
             self.username = username;
         }
-    }
 
-    init() 
-    {
-
+        pub fun updateHighScore(highscore: Int)
+        {
+            self.highscore = highscore;
+        }
     }
 }
