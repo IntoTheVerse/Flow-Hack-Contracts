@@ -1,21 +1,34 @@
 {
 	"contracts": {
-		"UserInfo": {
-			"source": "./cadence/contracts/UserInfo.cdc"
+		"FungibleToken": {
+			"source": "./cadence/contracts/FungibleToken.cdc",
+			"aliases": {
+				"emulator": "0xee82856bf20e2aa6",
+				"testnet": "0x9a0766d93b6608b7"
+			}
 		},
 		"NonFungibleToken": {
+			"source": "./cadence/contracts/NonFungibleToken.cdc",
 			"aliases": {
-				"emulator": "f8d6e0586b0a20c7"
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "0x631e88ae7f1d7c20"
 			}
+		},
+		"UserInfoAccount": {
+			"source": "./cadence/contracts/UserInfoAccount.cdc"
+		},
+		"DunToken": {
+			"source": "./cadence/contracts/DunToken.cdc"
+		},
+		"DungeonToken": {
+			"source": "./cadence/contracts/DungeonToken.cdc"
+		},
+		"Token": {
+			"source": "./cadence/contracts/Token.cdc"
 		},
 		"FlowToken": {
 			"aliases": {
 				"emulator": "0ae53cb6e3f42a79"
-			}
-		},
-		"FungibleToken": {
-			"aliases": {
-				"emulator": "ee82856bf20e2aa6"
 			}
 		},
 		"FUSD": {
@@ -24,8 +37,17 @@
 			}
 		},
 		"MetadataViews": {
+			"source": "./cadence/contracts/MetadataViews.cdc",
 			"aliases": {
-				"emulator": "f8d6e0586b0a20c7"
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "0x631e88ae7f1d7c20"
+			}
+		},
+		"FungibleTokenMetadataViews": {
+			"source": "./cadence/contracts/FungibleTokenMetadataViews.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "0x9a0766d93b6608b7"
 			}
 		},
 		"ExampleNFT": {
@@ -46,7 +68,7 @@
 	},
 	"deployments": {
 		"testnet": {
-			"testnet-account": ["UserInfo"]
+			"testnet-account": ["DungeonToken", "UserInfoAccount", "DunToken"]
 		}
 	},
 	"networks": {
@@ -60,8 +82,8 @@
 			"key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
 		},
 		"testnet-account": {
-			"address": "0x50446ed48d2a8503",
-			"key": "e9a889e331f45dad983a490fa4453989ae75dbfd5a79920fa7a83fb4d41f47d4"
+			"address": "0xb3a67c41fdd418f4",
+			"key": "fab27ece974893a36971e7170011656e371d7f98e034a22cb62f8375db5f0df5"
 		  }
 	}
 }

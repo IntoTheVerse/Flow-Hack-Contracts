@@ -5,15 +5,11 @@ pub contract UserInfoAccount
     init()
     {
         self.totalUsers = 0;
-        self.account.save<@Admin>(<-create Admin(), to: /storage/Admin);
     }
 
-    pub resource Admin 
+    pub fun createNewUser(): @UserAsset
     {
-        pub fun createNewUser(): @UserAsset
-        {
-            return <- create UserAsset();
-        }
+        return <- create UserAsset();
     }
 
     pub resource UserAsset 
