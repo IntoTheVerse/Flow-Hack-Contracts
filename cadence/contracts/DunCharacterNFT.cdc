@@ -75,8 +75,8 @@ pub contract DunCharacterNFT: NonFungibleToken {
     self.totalSupply = 0
 
     self.characterMetadata = {
-      1: "{\"Name\" : \"Bob\", \"Price\" : 12}",
-      2: "{\"Name\" : \"Chris\", \"Price\" : 20}"
+      1: "{\"Name\" : \"Bob\", \"Price\" : 12, \"Description\" : \"A lumberjack struck by disco fever, Bob slays trees with a neon chainsaw while busting funky moves that would make John Travolta proud\"}",
+      2: "{\"Name\" : \"Chris\", \"Price\" : 20, \"Description\" : \"The peculiar digital sorcerer, Chris, weaves spells with emojis and memes, harnessing the internet's bizarre power to defeat foes in a realm where hashtags hold mystical significance\"}"
     }
   }
 }
