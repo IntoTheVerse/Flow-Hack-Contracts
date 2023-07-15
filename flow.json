@@ -20,8 +20,11 @@
 		"DunToken": {
 			"source": "./cadence/contracts/DunToken.cdc"
 		},
-		"DunCharacterNFT": {
-			"source": "./cadence/contracts/DunCharacterNFT.cdc"
+		"DungeonCharacterNFT": {
+			"source": "./cadence/contracts/DungeonCharacterNFT.cdc"
+		},
+		"DungeonWeaponNFT": {
+			"source": "./cadence/contracts/DungeonWeaponNFT.cdc"
 		},
 		"DungeonToken": {
 			"source": "./cadence/contracts/DungeonToken.cdc"
@@ -71,7 +74,7 @@
 	},
 	"deployments": {
 		"testnet": {
-			"testnet-account": ["DungeonToken", "UserInfoAccount", "DunToken", "DunCharacterNFT"]
+			"testnet-account": ["DungeonToken", "UserInfoAccount", "DunToken", "DungeonCharacterNFT", "DungeonWeaponNFT"]
 		}
 	},
 	"networks": {
