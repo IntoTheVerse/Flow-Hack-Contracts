@@ -108,7 +108,18 @@ pub contract PlayerTest: NonFungibleToken, ViewResolver {
           }
         )
       case Type<MetadataViews.Traits>():
-        let traitsView = MetadataViews.dictToTraits(dict: self.metadata, excludedNames: [])
+        let excludedTraits = ["Name", "Description"]
+        let traitsView = MetadataViews.dictToTraits(dict: self.metadata, excludedNames: excludedTraits)
+
+        // mintedTime is a unix timestamp, we should mark it with a displayType so platforms know how to show it.
+        let mintedTimeTrait = MetadataViews.Trait(name: "mintedTime", value: self.metadata["mintedTime"]!, displayType: "Date", rarity: nil)
+        traitsView.addTrait(mintedTimeTrait)
+
+        // foo is a trait with its own rarity
+        let fooTraitRarity = MetadataViews.Rarity(score: 10.0, max: 100.0, description: "Common")
+        let fooTrait = MetadataViews.Trait(name: "Name", value: self.metadata["Name"], displayType: nil, rarity: fooTraitRarity)
+        traitsView.addTrait(fooTrait)
+        //let traitsView = MetadataViews.dictToTraits(dict: self.metadata, excludedNames: [])
         return traitsView
       }
       return nil
@@ -191,7 +202,6 @@ pub contract PlayerTest: NonFungibleToken, ViewResolver {
       royalties: [MetadataViews.Royalty]
     ) {
       let metadata: {String: AnyStruct} = {}
-      let currentBlock = getCurrentBlock()
 
       metadata["Name"] = PlayerTest.characterMetadata[metadataID]![0]
       metadata["Price"] = PlayerTest.characterMetadata[metadataID]![1]
