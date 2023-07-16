@@ -26,6 +26,12 @@
 		"DungeonWeaponNFT": {
 			"source": "./cadence/contracts/DungeonWeaponNFT.cdc"
 		},
+		"ExampleNFT": {
+			"source": "./cadence/contracts/ExampleNFT.cdc"
+		},
+		"ViewResolver": {
+			"source": "./cadence/contracts/ViewResolver.cdc"
+		},
 		"DungeonToken": {
 			"source": "./cadence/contracts/DungeonToken.cdc"
 		},
@@ -56,11 +62,6 @@
 				"testnet": "0x9a0766d93b6608b7"
 			}
 		},
-		"ExampleNFT": {
-			"aliases": {
-				"emulator": "f8d6e0586b0a20c7"
-			}
-		},
 		"NFTStorefrontV2": {
 			"aliases": {
 				"emulator": "f8d6e0586b0a20c7"
@@ -74,7 +75,7 @@
 	},
 	"deployments": {
 		"testnet": {
-			"testnet-account": ["DungeonToken", "UserInfoAccount", "DunToken", "DungeonCharacterNFT", "DungeonWeaponNFT"]
+			"testnet-account": ["DungeonToken", "UserInfoAccount", "DunToken", "DungeonCharacterNFT", "DungeonWeaponNFT","ViewResolver", "ExampleNFT"]
 		}
 	},
 	"networks": {
