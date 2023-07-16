@@ -32,6 +32,9 @@
 		"ViewResolver": {
 			"source": "./cadence/contracts/ViewResolver.cdc"
 		},
+		"PlayerTest": {
+			"source": "./cadence/contracts/PlayerTest.cdc"
+		},
 		"DungeonToken": {
 			"source": "./cadence/contracts/DungeonToken.cdc"
 		},
@@ -75,7 +78,7 @@
 	},
 	"deployments": {
 		"testnet": {
-			"testnet-account": ["DungeonToken", "UserInfoAccount", "DunToken", "DungeonCharacterNFT", "DungeonWeaponNFT","ViewResolver", "ExampleNFT"]
+			"testnet-account": ["DungeonToken", "UserInfoAccount", "DunToken", "DungeonCharacterNFT", "DungeonWeaponNFT","ViewResolver", "ExampleNFT", "PlayerTest"]
 		}
 	},
 	"networks": {
