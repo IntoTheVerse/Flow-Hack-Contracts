@@ -38,6 +38,12 @@
 		"DungeonToken": {
 			"source": "./cadence/contracts/DungeonToken.cdc"
 		},
+		"PlayersOfDungeon": {
+			"source": "./cadence/contracts/PlayersOfDungeon.cdc"
+		},
+		"WeaponsOfDungeon": {
+			"source": "./cadence/contracts/WeaponsOfDungeon.cdc"
+		},
 		"Token": {
 			"source": "./cadence/contracts/Token.cdc"
 		},
@@ -78,7 +84,7 @@
 	},
 	"deployments": {
 		"testnet": {
-			"testnet-account": ["DungeonToken", "UserInfoAccount", "DunToken", "DungeonCharacterNFT", "DungeonWeaponNFT","ViewResolver", "ExampleNFT", "PlayerTest"]
+			"testnet-account": ["DungeonToken", "UserInfoAccount", "DunToken", "DungeonCharacterNFT", "DungeonWeaponNFT","ViewResolver", "ExampleNFT", "PlayerTest", "PlayersOfDungeon", "WeaponsOfDungeon"]
 		}
 	},
 	"networks": {
